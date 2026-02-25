@@ -1,0 +1,219 @@
+/* The Batu Hotel & Villas HMS - Custom Styles */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Canvas styling */
+canvas {
+  outline: none;
+}
+
+/* 3D Dashboard animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Status badge animations */
+@keyframes status-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* Timer display */
+.timer-display {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* Card hover effects */
+.room-card {
+  transition: all 0.2s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button animations */
+.btn-hover-lift {
+  transition: all 0.2s ease;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-1px);
+}
+
+.btn-hover-lift:active {
+  transform: translateY(0);
+}
+
+/* Loading skeleton */
+@keyframes skeleton {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200px 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+}
+
+/* Notification toast customization */
+[data-sonner-toast] {
+  background: #1f2937 !important;
+  border: 1px solid #374151 !important;
+  color: white !important;
+}
+
+/* Chart tooltips */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* Dialog overlay */
+[data-state="open"] > [data-radix-dialog-overlay] {
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .full-width-mobile {
+    width: 100% !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Focus styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on UI elements */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 3D canvas container */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-container canvas {
+  display: block;
+}
+
+/* Room status indicators */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dirty { background-color: #ef4444; }
+.status-cleaning { background-color: #3b82f6; }
+.status-vacant-clean { background-color: #22c55e; }
+.status-occupied { background-color: #8b5cf6; }
+.status-ooo { background-color: #6b7280; }
+
+/* Performance meter */
+.performance-meter {
+  position: relative;
+  height: 8px;
+  background: #374151;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.performance-meter-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.performance-meter-fill.high { background: linear-gradient(90deg, #22c55e, #10b981); }
+.performance-meter-fill.medium { background: linear-gradient(90deg, #eab308, #f59e0b); }
+.performance-meter-fill.low { background: linear-gradient(90deg, #ef4444, #dc2626); }
